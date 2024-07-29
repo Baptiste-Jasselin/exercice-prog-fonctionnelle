@@ -61,4 +61,15 @@ const users = [
   },
 ];
 
-export const allowedUsers = users;
+// export const allowedUsers = users.filter((user) => (user.age>=18 && user.cash>=20) || user.cash>=500);
+// la solution ci-dessus est juste mais illisible surtout si les conditions s'ajoutent
+// au cours de la vie du projet. Il vaut mieux le faire avec un if
+
+export const allowedUsers = users.filter((user) => {
+  // si l'utilisateur a 500€ il peut entrer
+  if(user.cash>=500)
+    return user;
+  // sinon il doit avoir plus de 18 ans et 20€ pour entrer
+  else if (user.age>18 && user.cash>=20)
+    return user;
+});
