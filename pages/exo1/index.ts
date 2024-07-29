@@ -19,3 +19,11 @@ Notions
 */
 
 const items = ['Sunglasses', 'Suit', 'Business card', 'Jet ski'];
+
+const parentElement = document.getElementById('result')
+
+ items.forEach(element => {
+  const newLi = document.createElement('li')
+  newLi.textContent = element
+  parentElement?.appendChild(newLi)
+ });    
