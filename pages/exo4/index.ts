@@ -43,4 +43,12 @@ export const data = [
   },
 ];
 
-export function findUser(login, users) {}
+// je créer un type pour indiquer que le paramétre "users" de notre fonction sera un tableau de user. Un tableau de user c'est bien le type de notre set de data à analyser.
+type User = {
+  name: String
+  login: String
+}
+
+export function findUser(login: string, users: User[]) {
+  return users.find((user) => user.login === login);
+}
